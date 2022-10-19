@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-add',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myapi:ApiService) { }
   flightName=""
   destination=""
   capacity=""
@@ -24,6 +25,8 @@ export class AddComponent implements OnInit {
     }
     console.log(data)
     alert("Data Added")
+
+
   }
   ngOnInit(): void {
   }
