@@ -12,19 +12,18 @@ export class AddComponent implements OnInit {
   flightName=""
   destination=""
   capacity=""
-  
-  
   readvalues=()=>{
     let data={
       "flightName":this.flightName,
       "destination":this.destination,
       "capacity":this.capacity,
-      
-     
-    
     }
     console.log(data)
-    alert("Data Added")
+    this.myapi.addFlight(data).subscribe(
+      (response)=>{
+        alert("Data Added")
+      }
+    )
 
 
   }
